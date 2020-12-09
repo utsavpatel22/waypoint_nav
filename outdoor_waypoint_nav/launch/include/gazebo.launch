@@ -11,8 +11,8 @@
       <arg name="world_name" value="$(find husky_gazebo)/worlds/clearpath_playpen.world"/>
       <!--<arg name="world_name" value="worlds/empty.world"/>-->
       <arg name="laser_enabled" value="$(arg laser_enabled)"/>
-      <arg name="ur5_enabled" value="$(arg ur5_enabled)"/>
-      <arg name="kinect_enabled" value="$(arg kinect_enabled)"/>
+      <!-- <arg name="ur5_enabled" value="$(arg ur5_enabled)"/> -->
+      <!-- <arg name="kinect_enabled" value="$(arg kinect_enabled)"/> -->
     </include>
 
 </launch>
