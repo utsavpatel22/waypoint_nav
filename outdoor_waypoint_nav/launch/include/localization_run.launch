@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <launch>
 
+  <arg name="odom_topic" default="odometry/filtered_map" />
+  <arg name="GPS_topic" default="/navsat/fix" />
+  <arg name="IMU_topic" default="/imu/data" />
+
   <group ns="/outdoor_waypoint_nav"> 
   <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/ekf_params.yaml" />
   <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/navsat_params.yaml" />
@@ -12,9 +16,9 @@
   </node>
 
   <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform" clear_params="true" output="screen">
-      <remap from="odometry/filtered" to="odometry/filtered_map"/>
-      <remap from="gps/fix" to="/navsat/fix"/>
-      <remap from="imu/data" to="/imu/data"/>
+      <remap from="odometry/filtered" to="$(arg odom_topic)"/>
+      <remap from="gps/fix" to="$(arg GPS_topic)"/>
+      <remap from="imu/data" to="$(arg IMU_topic)"/>
   </node>
   </group>
 
