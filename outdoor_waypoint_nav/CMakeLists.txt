@@ -32,6 +32,7 @@ add_executable(calibrate_heading src/calibrate_heading.cpp)
 add_executable(safety_node src/safety_node.cpp)
 add_executable(switch_controllers src/switch_controllers.cpp)
 add_executable(map_transform src/map2base_link.cpp)
+add_executable(laser2base_link src/laser2base_link.cpp)
 
 target_link_libraries(gps_waypoint ${catkin_LIBRARIES})
 # target_link_libraries(gps_waypoint_continuous ${catkin_LIBRARIES})
@@ -44,6 +45,7 @@ target_link_libraries(calibrate_heading ${catkin_LIBRARIES})
 target_link_libraries(safety_node ${catkin_LIBRARIES})
 target_link_libraries(switch_controllers ${catkin_LIBRARIES})
 target_link_libraries(map_transform ${catkin_LIBRARIES})
+target_link_libraries(laser2base_link ${catkin_LIBRARIES})
 
 install(DIRECTORY  launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
