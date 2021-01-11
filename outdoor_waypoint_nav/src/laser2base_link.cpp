@@ -27,7 +27,7 @@ void poseCallback(const nav_msgs::Odometry::ConstPtr& msg){
 }
 
 int main(int argc, char** argv){
-  ros::init(argc, argv, "laser2base_link_broadcaster");
+  ros::init(argc, argv, "laser2mid_mount_broadcaster");
     
   ros::NodeHandle node;
   ros::Subscriber sub = node.subscribe("/odometry/filtered", 10, &poseCallback);
