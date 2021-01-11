@@ -24,9 +24,8 @@
   <!-- Run laser to base_link transform -->
     <node name="laser2base_link" pkg="outdoor_waypoint_nav" type="laser2base_link"/>
 
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find outdoor_waypoint_nav)/map_files/Iribe_lobby_cropped.yaml" />
-  <node name="map_transform" pkg="outdoor_waypoint_nav" type="map_transform"/>
-
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find outdoor_waypoint_nav)/map_files/outdoor_map.yaml" />
+ 
   <!-- launch safety node to allow the user to disable velocity commands to the robot -->
   <include file="$(find outdoor_waypoint_nav)/launch/include/safety_node.launch" />
 
