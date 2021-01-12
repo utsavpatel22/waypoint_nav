@@ -6,7 +6,7 @@
   <arg name="IMU_topic" default="/imu/data" />
 
   <group ns="/outdoor_waypoint_nav"> 
-  <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/ekf_params.yaml" />
+  <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/ekf_params_jackal.yaml" />
   <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/navsat_params.yaml" />
   
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_odom" clear_params="true"/>
