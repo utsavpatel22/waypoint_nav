@@ -11,7 +11,7 @@
   <!-- Launch robot_localization and navsat node-->
     <include file="$(find outdoor_waypoint_nav)/launch/include/localization_run.launch">
       <arg name="odom_topic" value="odometry/filtered" />
-      <arg name="GPS_topic" value="/navsat/fix" />
+      <arg name="GPS_topic" value="/gps/fix" />
       <arg name="IMU_topic" value="/imu/data" />
     </include>
 
