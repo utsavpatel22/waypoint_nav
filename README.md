@@ -1,4 +1,12 @@
-# waypoint_nav
+# Current:
+Still in development phase. Need to check if these changes work. [GPSIntegration](http://docs.ros.org/en/kinetic/api/robot_localization/html/integrating_gps.html)
+- Check for driver used to integrate GPS
+- Can the name of the gps publisher be changed?
+- Check for broadcasting UTM from navsat params file
+- To debug just IMU, orient robot in east (CCW is +ve) and move the robot to check if the sensor readings increase, else provide yaw_offset in params
+- Similarly checkout for magnetic_declination [link](https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination) in radians
+
+## waypoint_nav (Intro from original)
 
 This package performs outdoor GPS waypoint navigation. It can navigate while building a map, avoiding obstacles, and can navigate continuously between each goal or stop at each goal. 
 
