@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <launch>
 
-  <arg name="odom_topic" default="odometry/filtered_map" />
+  <arg name="odom_topic" default="/odometry/filtered_map" />
   <arg name="GPS_topic" default="/navsat/fix" />
   <arg name="IMU_topic" default="/imu/data" />
 
   <group ns="/outdoor_waypoint_nav"> 
   <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/ekf_params_jackal.yaml" />
-  <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/navsat_params.yaml" />
-  
+
+  <rosparam command="load" file="$(find outdoor_waypoint_nav)/params/navsat_params.yaml" />  
+
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_odom" clear_params="true"/>
 
   <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_map" clear_params="true">
@@ -20,6 +21,7 @@
       <remap from="gps/fix" to="$(arg GPS_topic)"/>
       <remap from="imu/data" to="$(arg IMU_topic)"/>
   </node>
+  
   </group>
 
 </launch>

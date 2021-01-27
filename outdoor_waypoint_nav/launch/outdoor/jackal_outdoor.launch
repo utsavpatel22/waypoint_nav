@@ -1,16 +1,13 @@
 <?xml version="1.0"?>
 
 <launch>
- 
+
   <!-- Run gmapping to create map -->
     <!-- <include file="$(find husky_navigation)/launch/gmapping.launch" /> -->
-
-  <!-- Launch hector_slam for laser odometry and mapping -->
-    <!--include file="$(find hector_mapping_nav)/launch/scanmatch_nav.launch" /-->
-
+    
   <!-- Launch robot_localization and navsat node-->
     <include file="$(find outdoor_waypoint_nav)/launch/include/localization_run.launch">
-      <arg name="odom_topic" value="odometry/filtered" />
+      <arg name="odom_topic" value="/odometry/filtered_map" /> <!-- odometry/filtered_map -->
       <arg name="GPS_topic" value="/gps/fix" />
       <arg name="IMU_topic" value="/imu/data" />
     </include>
@@ -23,6 +20,7 @@
 
   <!-- Run laser to base_link transform -->
     <node name="laser2base_link" pkg="outdoor_waypoint_nav" type="laser2base_link"/>
+<!--  <node pkg="tf" type="static_transform_publisher" name="base_link_to_base_laser" args="0.2 0.0 0.2 0.0 0.0 0.0 /base_link /base_laser 100" /> -->
 
   <node name="map_server" pkg="map_server" type="map_server" args="$(find outdoor_waypoint_nav)/map_files/outdoor_map.yaml" />
  
