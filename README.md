@@ -6,6 +6,10 @@ Still in development phase. Need to check if these changes work. [GPSIntegration
 - To debug just IMU, orient robot in east (CCW is +ve) and move the robot to check if the sensor readings increase, else provide yaw_offset in params
 - Similarly checkout for magnetic_declination [link](https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination) in radians
 
+# References:
+- [Setup_Robot_localization](https://www.robotandchisel.com/2020/05/01/outdoor-navigation/)
+- [UserGuide](https://www.generationrobots.com/media/Jackal_Clearpath_Robotics_Userguide.pdf)
+
 ## waypoint_nav (Intro from original)
 
 This package performs outdoor GPS waypoint navigation. It can navigate while building a map, avoiding obstacles, and can navigate continuously between each goal or stop at each goal. 
@@ -43,7 +47,7 @@ The outdoor_waypoint_nav package within waypoint_nav includes the following cust
   
 Video demonstrations can be found at my Youtube Channel: https://www.youtube.com/channel/UC3FoqSLn12-dKOQ1Sn0xbFQ/videos
 
-IMPORTANT NOTES:
+## IMPORTANT NOTES:
 ----------------
  - Please DO NOT contact Clearpath Robotics with questions about this package. Instead, email me at nicholas.c.charron@gmail.com.
  
