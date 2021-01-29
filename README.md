@@ -16,11 +16,11 @@ roslaunch jackal_gazebo jackal_world.launch config:=front_laser
 
 - Real world jackal:
 Need to launch the following-
-->Jackal
-->GPS (jackal original currently)
-->Lidar
-->IMU
-Control is through teleop which we can ssh through other device.
+<br>Jackal
+<br>GPS (jackal original currently)
+<br>Lidar
+<br>IMU
+<br>Control is through teleop which we can [ssh](http://wiki.ros.org/ROS/NetworkSetup) through other device.
 
 - Waypoint Navigation:
 ```
