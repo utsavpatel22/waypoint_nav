@@ -9,8 +9,21 @@ to all Jackal workspaces, whether simulation, desktop, or on the robot's own hea
 - Incomplete setup for outdoor
 
 ## Run
+- Simulation jackal:
 ```
 roslaunch jackal_gazebo jackal_world.launch config:=front_laser
+```
+
+- Real world jackal:
+Need to launch the following-
+->Jackal
+->GPS (jackal original currently)
+->Lidar
+->IMU
+Control is through teleop which we can ssh through other device.
+
+- Waypoint Navigation:
+```
 roslaunch outdoor_waypoint_nav outdoor_waypoint_nav_sim.launch
 ```
 
