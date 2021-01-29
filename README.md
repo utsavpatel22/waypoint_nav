@@ -12,6 +12,7 @@ to all Jackal workspaces, whether simulation, desktop, or on the robot's own hea
 - Simulation jackal:
 ```
 roslaunch jackal_gazebo jackal_world.launch config:=front_laser
+roslaunch outdoor_waypoint_nav outdoor_waypoint_nav_sim.launch
 ```
 
 - Real world jackal:
@@ -21,10 +22,8 @@ Need to launch the following-
 <br>Lidar
 <br>IMU
 <br>Control is through teleop which we can [ssh](http://wiki.ros.org/ROS/NetworkSetup) through other device.
-
-- Waypoint Navigation:
 ```
-roslaunch outdoor_waypoint_nav outdoor_waypoint_nav_sim.launch
+roslaunch outdoor_waypoint_nav outdoor_waypoint_nav.launch
 ```
 
 ## References:
