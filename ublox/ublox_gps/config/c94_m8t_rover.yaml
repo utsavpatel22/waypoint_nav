@@ -43,5 +43,5 @@ publish:
     hui: false
 
   nav:
-    all: true
-    # posecef: false
+    # all: true
+    posecef: true
