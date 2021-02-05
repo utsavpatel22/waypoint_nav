@@ -1,10 +1,15 @@
 # Current:
 Still in development phase. Need to check if these changes work. [GPSIntegration](http://docs.ros.org/en/kinetic/api/robot_localization/html/integrating_gps.html)
-- Check for driver used to integrate GPS
-- Can the name of the gps publisher be changed?
+[x] Check for driver used to integrate GPS
+[x] Can the name of the gps publisher be changed?
 - Check for broadcasting UTM from navsat params file
-- To debug just IMU, orient robot in east (CCW is +ve) and move the robot to check if the sensor readings increase, else provide yaw_offset in params
+[x] To debug just IMU, orient robot in east (CCW is +ve) and move the robot to check if the sensor readings increase, else provide yaw_offset in params
 - Similarly checkout for magnetic_declination [link](https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml#declination) in radians
+
+# GPS launch command: 
+```
+roslaunch ublox_gps ublox_device_nmea.launch
+```
 
 # References:
 - [Setup_Robot_localization](https://www.robotandchisel.com/2020/05/01/outdoor-navigation/)
