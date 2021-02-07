@@ -7,7 +7,7 @@ save:
                             # Manager, Antenna, and Logging Configuration
   device: 4                 # Save to EEPROM
 
-device: /dev/ttyACM1
+device: /dev/ttyACM0
 frame_id: gps
 rate: 4                     # in Hz
 nav_rate: 4                 # [# of measurement cycles], recommended 1 Hz, may 
