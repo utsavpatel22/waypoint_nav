@@ -32,15 +32,7 @@ add_library(ublox_gps src/gps.cpp)
 # fix msg compile order bug
 add_dependencies(ublox_gps ${catkin_EXPORTED_TARGETS})
 
-target_link_libraries(ublox_gps
-  boost_system
-  boost_regex
-  boost_thread
-)
-
-target_link_libraries(ublox_gps
-  ${catkin_LIBRARIES}
-)
+target_link_libraries(ublox_gps ${Boost_LIBRARIES} ${catkin_LIBRARIES})
 
 # build node
 add_executable(ublox_gps_node src/node.cpp src/mkgmtime.c src/raw_data_pa.cpp)
