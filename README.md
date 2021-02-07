@@ -10,10 +10,23 @@ Still in development phase. Need to check if these changes work. [GPSIntegration
 ```
 roslaunch ublox_gps ublox_device_nmea.launch
 ```
+Do test these as well:
+```
+roslaunch ublox_gps ublox_device_nmea.launch param_file_name:=m8u_rover.yaml
+```
+Check for gps issues? else run this.
+```
+roslaunch ublox_gps ublox_device_nmea.launch param_file_name:=m8u_rover_new.yaml
+```
+
+# Known Issues:
+If you receive the ASIO read input buffer error then please restart the gps launch file, it will work well!
+This relates to the change in baud rate specified in param files.
 
 # References:
 - [Setup_Robot_localization](https://www.robotandchisel.com/2020/05/01/outdoor-navigation/)
 - [UserGuide](https://www.generationrobots.com/media/Jackal_Clearpath_Robotics_Userguide.pdf)
+- [UBlox M8U GPS](https://github.com/MrBanannaMan/NEO-M8U-Configuration-Files)
 
 ## waypoint_nav (Intro from original)
 
