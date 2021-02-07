@@ -13,7 +13,7 @@ rate: 4                     # in Hz
 nav_rate: 4                 # [# of measurement cycles], recommended 1 Hz, may 
                             # be either 5 Hz (Dual constellation) or 
                             # 8 Hz (GPS only)
-dynamic_model: portable    # Airborne < 2G, 2D fix not supported (3D only), 
+dynamic_model: automotive    # Airborne < 2G, 2D fix not supported (3D only), 
                             # Max Alt: 50km
                             # Max Horizontal Velocity: 250 m/s, 
                             # Max Vertical Velocity: 100 m/s
@@ -28,7 +28,7 @@ uart1:
 
 nmea:
   set: true
-  version: 14 #70
+  version: 65 #70
   num_sv: 8
   sv_numbering: 1
   compat: true
@@ -68,7 +68,7 @@ publish:
   aid:
     hui: false
 
-  nav:
-    # all: true
-    sat: true
-    posecef: true
+  # nav:
+  #   # all: true
+  #   sat: true
+  #   posecef: true

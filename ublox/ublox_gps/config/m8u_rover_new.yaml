@@ -1,0 +1,108 @@
+
+debug: 1
+# save:
+#   mask: 3103    Uncommenting the above saves this configuration file to the non-volatile flash. 
+#   device: 4     Unnecessary to remove since ROS runs this script every time it launches
+
+# Sub-Section 0 PRT - Port, USB, UART, SPI and DDC settings
+
+device: /dev/ttyACM0
+
+uart1:
+  baudrate: 115200
+  in: 1               # UBX Configuration Inputs Only                
+  out: 2              # NMEA Outputs Only
+  
+frame_id: gps
+
+# Sub-Section 1 MSG - Message Settings (enable/disable, update rate)
+subscribe:
+  all: true
+  aid:
+    all: false
+
+# Sub-Section 2 INF - Information Output Settings (Errors, Warnings, Notice, Test etc.)
+inf:
+  all: true
+      
+publish:
+  all: true
+
+# Sub-Section 3 NAV - Settings for Navigation Parameters, Receiver Datum, Measurement and Navigation Rate, SBAS, NMEA and
+                     # Time mode
+                     
+# NAV5Parameters
+dynamic_model: 0    # Zero is for Portable Devices
+fix_mode: 3         # Auto 2D/3D Fix Mode. 3D = Altitude + Long. + Lat., 2D = Long. + Lat.
+                    # 2D Requires 3 Satellites, 3D Requires 4 Satellites
+                    # 3D takes precedent unless only 3 visible satellites
+dr_limit: 0
+
+
+# NAVX5 Parameters
+
+
+# DAT Parameters
+dat:
+  set: false
+
+# RATE Parameters
+rate: 4             # Measurement rate in Hz which is 1 relative to nav_rate
+nav_rate: 4         # Number of Measurement cycles
+# Note that for NEO-M8U which is a UDR device 1 is reccommended for nav_rate
+
+# SBAS Parameters
+sbas:
+  usage: 1          # Using SBAS as a Geo ranging source i.e. Augmenting satellites for better coverage
+                     
+# NMEA Parameters
+nmea:
+  set: true
+  version: 65         # Hexadecimal for NMEA version 4.1 supported by NEO-M8U. 4.1 must be used to support Galileo and is set here!!
+  num_sv: 8           # Number of satellite's that can spit information from each TalkerID (i.e. GN = Glonass talker ID)
+  sv_numbering: 1
+  compat: true
+  consider: true
+  limit82: true
+  high_prec: true
+  filter:
+    pos: false
+    msk_pos: false
+    time: false
+    date: false
+    gps_only: false
+    track: false
+  gnssToFilter:       # True = Disables reporting of those satellites, False = Enables Reporting
+    gps: false
+    sbas: false
+    qzss: true
+    glonass: false
+    beidou: true
+  main_talker_id: 1   # Sets the main talker ID to GPS
+  gsv_talker_id: 1    # Sets the default main talker ID to GPS
+  bds_talker_id: [0,0]
+  
+# TMODE2 Parameters
+         
+# Sub-Section 4 RXM - GNSS Settings, Power Mode Settings, Time Pulse Settings, Jamming/Interference Monitor Settings
+# GNSS Parameters
+gnss:
+  gps: true
+  glonass: true
+  beidou: false
+  galileo: true
+  qzss: false
+  sbas: true
+  imes: false
+  
+#Sub-Section 9 RINV - Remote Inventory Configuration
+
+
+# Sub-Section 10 ANT - Antenna Configuration
+
+
+# Sub-Section 11 LOG - Logging Configuration
+
+
+# Sub-Section 12 FTS - Disciplining Configuration. Only applicable to th eTime & Frequency Sync product
+
